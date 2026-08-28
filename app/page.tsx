@@ -1,69 +1,228 @@
-import Image from "next/image";
-
+import Link from "next/link";
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
+    <main className="min-h-screen bg-white text-zinc-900">
+      {/* Navigation */}
+      <header className="border-b border-zinc-200 bg-white">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+          <Link href="/" className="text-xl font-bold tracking-tight">
+  Michael&apos;s Pressure Washing
+</Link>
+          <nav className="hidden gap-8 text-sm font-medium md:flex">
+  <Link href="/services" className="hover:text-zinc-500">
+    Services
+  </Link>
+  <Link href="/#about" className="hover:text-zinc-500">
+    About
+  </Link>
+  <Link href="/#areas" className="hover:text-zinc-500">
+    Service Areas
+  </Link>
+  <Link href="/#quote" className="hover:text-zinc-500">
+    Get a Quote
+  </Link>
+</nav>
+        </div>
+      </header>
+
+      {/* Hero */}
+      <section className="bg-zinc-950 text-white">
+        <div className="mx-auto grid max-w-6xl gap-12 px-6 py-24 md:grid-cols-2 md:items-center md:py-32">
+          <div>
+            <p className="mb-5 text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400">
+              Austin, Texas
+            </p>
+
+            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
+              Make Your Home Look Brand New.
+            </h1>
+
+            <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-300">
+              Professional pressure washing for homeowners in Austin and
+              surrounding communities. Family owned and operated with about 20
+              years of experience.
+            </p>
+
+            <div className="mt-8">
+              <a
+                href="#quote"
+                className="inline-flex rounded-full bg-white px-7 py-4 font-semibold text-zinc-950 transition hover:bg-zinc-200"
+              >
+                Get a Free Quote
+              </a>
+            </div>
+          </div>
+
+         <div className="relative min-h-[320px] overflow-hidden rounded-3xl">
+  <img
+  src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80"
+  alt="Professional pressure washing service"
+  className="h-full w-full object-cover"
+/>
+</div>
+        </div>
+      </section>
+
+      {/* Services */}
+      <section id="services" className="bg-white px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="max-w-2xl">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+              Our Services
+            </p>
+
+            <h2 className="mt-3 text-4xl font-bold tracking-tight">
+              Professional cleaning for your property.
+            </h2>
+
+            <p className="mt-5 text-lg leading-8 text-zinc-600">
+              We help homeowners keep their outdoor surfaces looking clean,
+              fresh, and well maintained.
+            </p>
+          </div>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-3">
+            <article className="rounded-2xl border border-zinc-200 p-8">
+              <div className="text-4xl">🏠</div>
+
+              <h3 className="mt-6 text-2xl font-semibold">
+                Driveway Cleaning
+              </h3>
+
+              <p className="mt-4 leading-7 text-zinc-600">
+                Remove built-up dirt, grime, and stains to give your driveway
+                a cleaner, more refreshed appearance.
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-zinc-200 p-8">
+              <div className="text-4xl">🧼</div>
+
+              <h3 className="mt-6 text-2xl font-semibold">
+                House Washing
+              </h3>
+
+              <p className="mt-4 leading-7 text-zinc-600">
+                Give the exterior of your home a fresh appearance by cleaning
+                away accumulated dirt and buildup.
+              </p>
+            </article>
+
+            <article className="rounded-2xl border border-zinc-200 p-8">
+              <div className="text-4xl">🌿</div>
+
+              <h3 className="mt-6 text-2xl font-semibold">
+                Deck &amp; Patio Cleaning
+              </h3>
+
+              <p className="mt-4 leading-7 text-zinc-600">
+                Clean outdoor living spaces so your deck or patio looks ready
+                for relaxing, entertaining, and enjoying.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      {/* About / Why Us */}
+      <section id="about" className="bg-zinc-100 px-6 py-24">
+        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center">
+          <div>
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+              Why Michael&apos;s
+            </p>
+
+            <h2 className="mt-3 text-4xl font-bold tracking-tight">
+              Family owned. Experienced. Local.
+            </h2>
+
+            <p className="mt-6 text-lg leading-8 text-zinc-600">
+              Michael&apos;s Pressure Washing is a family-owned and operated
+              business with about 20 years of experience in the pressure
+              washing industry.
+            </p>
+
+            <p className="mt-4 text-lg leading-8 text-zinc-600">
+              We believe in doing quality work and helping homeowners take
+              pride in the appearance of their property.
+            </p>
+          </div>
+
+          <div className="rounded-3xl bg-zinc-950 p-10 text-white">
+            <p className="text-6xl font-bold">20</p>
+            <p className="mt-2 text-xl font-semibold">
+              Years of experience
+            </p>
+            <p className="mt-4 leading-7 text-zinc-400">
+              Family-owned and operated, serving homeowners in the Austin
+              area.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Service Areas */}
+      <section id="areas" className="px-6 py-24">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+              Service Areas
+            </p>
+
+            <h2 className="mt-3 text-4xl font-bold tracking-tight">
+              Proudly serving the Austin area.
+            </h2>
+          </div>
+
+          <div className="mt-12 grid gap-4 sm:grid-cols-3">
+            <div className="rounded-2xl bg-zinc-100 p-8 text-center">
+              <h3 className="text-xl font-semibold">Round Rock</h3>
+            </div>
+
+            <div className="rounded-2xl bg-zinc-100 p-8 text-center">
+              <h3 className="text-xl font-semibold">Cedar Park</h3>
+            </div>
+
+            <div className="rounded-2xl bg-zinc-100 p-8 text-center">
+              <h3 className="text-xl font-semibold">Pflugerville</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Quote CTA */}
+      <section id="quote" className="bg-zinc-950 px-6 py-24 text-center text-white">
+        <div className="mx-auto max-w-3xl">
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            Ready to make your property look its best?
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
+            Request a free quote from Michael&apos;s Pressure Washing.
+          </p>
+
+          <div className="mt-8">
+            <button
+              type="button"
+              className="rounded-full bg-white px-7 py-4 font-semibold text-zinc-950"
             >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+              Get a Free Quote
+            </button>
+          </div>
+
+          <p className="mt-5 text-sm text-zinc-500">
+            Contact details and the quote form will be added next.
           </p>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-zinc-800 bg-black px-6 py-8 text-center text-sm text-zinc-500">
+        <p>
+          © {new Date().getFullYear()} Michael&apos;s Pressure Washing
+        </p>
+        <p className="mt-2">Austin, Texas</p>
+      </footer>
+    </main>
   );
 }
