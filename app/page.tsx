@@ -3,8 +3,7 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       {/* Navigation */}
-      <header className="border-b border-zinc-200 bg-white">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+<header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
           <Link href="/" className="text-xl font-bold tracking-tight">
   Michael&apos;s Pressure Washing
 </Link>
@@ -33,27 +32,30 @@ export default function Home() {
               Austin, Texas
             </p>
 
-            <h1 className="text-5xl font-bold tracking-tight sm:text-6xl">
-              Make Your Home Look Brand New.
-            </h1>
+           <h1 className="text-5xl font-bold leading-tight tracking-tight sm:text-6xl lg:text-7xl">
+  Make Your Home Look Brand New.
+</h1>
 
             <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-300">
               Professional pressure washing for homeowners in Austin and
               surrounding communities. Family owned and operated with about 20
               years of experience.
             </p>
-
+<div className="mt-6 flex flex-wrap gap-3 text-sm font-medium text-zinc-300">
+  <span>✓ Family Owned & Operated</span>
+  <span>✓ 20+ Years Experience</span>
+  <span>✓ Free Quotes</span>
+</div>
             <div className="mt-8">
               <a
                 href="#quote"
-                className="inline-flex rounded-full bg-white px-7 py-4 font-semibold text-zinc-950 transition hover:bg-zinc-200"
-              >
+className="inline-flex items-center rounded-full bg-white px-8 py-4 text-base font-bold text-zinc-950 shadow-lg transition hover:-translate-y-0.5 hover:bg-zinc-100 hover:shadow-xl"              >
                 Get a Free Quote
               </a>
             </div>
           </div>
 
-         <div className="relative min-h-[320px] overflow-hidden rounded-3xl">
+         <div className="relative min-h-[320px] overflow-hidden rounded-3xl shadow-2xl md:min-h-[420px]">
   <img
   src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80"
   alt="Professional pressure washing service"
@@ -63,8 +65,10 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Services */}
-      <section id="services" className="bg-white px-6 py-24">
+<div className="h-1 w-full bg-zinc-800" />
+
+{/* Services */}
+<section id="services" className="bg-white px-6 py-24">
         <div className="mx-auto max-w-6xl">
           <div className="max-w-2xl">
             <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
