@@ -194,31 +194,129 @@ className="inline-flex items-center rounded-full bg-white px-8 py-4 text-base fo
         </div>
       </section>
 
-      {/* Quote CTA */}
-      <section id="quote" className="bg-zinc-950 px-6 py-24 text-center text-white">
-        <div className="mx-auto max-w-3xl">
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
-            Ready to make your property look its best?
-          </h2>
+     {/* Quote Form */}
+<section id="quote" className="bg-zinc-950 px-6 py-24 text-white">
+  <div className="mx-auto max-w-3xl">
+ <p className="text-center text-sm font-semibold uppercase tracking-[0.2em] text-zinc-400">
+  Free, No-Obligation Quote
+</p>
+    <h2 className="text-center text-4xl font-bold tracking-tight sm:text-5xl">
+      Get a Free Quote
+    </h2>
 
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-zinc-300">
-            Request a free quote from Michael&apos;s Pressure Washing.
-          </p>
+    <p className="mx-auto mt-6 max-w-2xl text-center text-lg leading-8 text-zinc-300">
+      Tell us a little about your project and Michael&apos;s Pressure Washing
+      will get back to you.
+    </p>
 
-          <div className="mt-8">
-            <button
-              type="button"
-              className="rounded-full bg-white px-7 py-4 font-semibold text-zinc-950"
-            >
-              Get a Free Quote
-            </button>
-          </div>
+<form className="mt-10 border-t border-zinc-800 pt-8 space-y-7">      {/* Name */}
+      <div>
+        <label htmlFor="name" className="mb-2 block text-sm font-medium">
+  Name <span className="text-zinc-400">*</span>
+</label>
+        <input
+          id="name"
+          type="text"
+          placeholder="Your name"
+          required
+          autoComplete="name"
+          className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder-zinc-500 outline-none focus:border-white"
+        />
+      </div>
 
-          <p className="mt-5 text-sm text-zinc-500">
-            Contact details and the quote form will be added next.
-          </p>
-        </div>
-      </section>
+      {/* Phone */}
+      <div>
+       <label htmlFor="phone" className="mb-2 block text-sm font-medium">
+  Phone <span className="text-zinc-400">*</span>
+</label>
+        <input
+          id="phone"
+          type="tel"
+placeholder="(512) 555-0123"
+          required
+          autoComplete="tel"
+          className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder-zinc-500 outline-none focus:border-white"
+        />
+      </div>
+
+      {/* Email */}
+      <div>
+        <label htmlFor="email" className="mb-2 block text-sm font-medium">
+          Email <span className="text-zinc-400">*</span>
+        </label>
+        <input
+          id="email"
+          type="email"
+          placeholder="you@example.com"
+          required
+          autoComplete="email"
+          className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder-zinc-500 outline-none focus:border-white"
+        />
+      </div>
+
+      {/* Service */}
+      <div>
+        <label htmlFor="service" className="mb-2 block text-sm font-medium">
+          Service Needed <span className="text-zinc-400">*</span>
+        </label>
+        <select
+          id="service"
+          required
+          autoComplete="off"
+          className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white outline-none focus:border-white"
+          defaultValue=""
+        >
+          <option value="" disabled>
+            Select a service
+          </option>
+          <option value="house-washing">House Washing</option>
+          <option value="driveway-cleaning">Driveway Cleaning</option>
+          <option value="patio-cleaning">Patio Cleaning</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+
+      {/* Message */}
+      <div>
+        <label htmlFor="message" className="mb-2 block text-sm font-medium">
+          Project Details <span className="text-zinc-400">*</span>
+        </label>
+        <textarea
+          id="message"
+          rows={6}
+          placeholder="Tell us about your project..."
+          required
+className="w-full resize-y rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white placeholder-zinc-500 outline-none focus:border-white"        />
+      </div>
+
+      {/* Submit */}
+      <button
+        type="submit"
+className="w-full rounded-full bg-white px-7 py-4 font-bold text-zinc-950 shadow-lg transition hover:-translate-y-0.5 hover:bg-zinc-200 hover:shadow-xl"      >
+        Request a Free Quote
+      </button>
+ <p className="text-center text-sm text-zinc-500">
+  We&apos;ll review your request and get back to you as soon as possible.
+</p>
+
+<div className="mt-6 text-center">
+<p className="text-sm font-medium text-zinc-400">
+  Prefer to call us directly?
+</p>
+  <a
+    href="tel:9292999611"
+    className="mt-1 inline-block text-lg font-semibold text-white underline underline-offset-4 hover:text-zinc-300"
+  >
+    929-299-9611
+ </a>
+</div>
+
+<p className="mt-6 text-center text-xs leading-5 text-zinc-600">
+  We&apos;ll only use your information to respond to your quote request.
+</p>
+</form>
+  </div>
+</section>
 
       {/* Footer */}
       <footer className="border-t border-zinc-800 bg-black px-6 py-8 text-center text-sm text-zinc-500">
