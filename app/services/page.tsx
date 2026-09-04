@@ -22,11 +22,12 @@ export default function Services() {
       {/* Services */}
       <section className="px-6 py-24">
         <div className="mx-auto max-w-6xl">
-          <div className="grid gap-8 md:grid-cols-3">
+          <div className="grid items-stretch gap-8 md:grid-cols-3">
             {/* Driveway Cleaning */}
-            <article className="rounded-3xl border border-zinc-200 p-8">
-              <p className="text-4xl">🏠</p>
-
+            <article className="flex h-full flex-col rounded-3xl border border-zinc-200 p-8 transition hover:-translate-y-1 hover:shadow-lg">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                Service 01
+              </p>
               <h2 className="mt-6 text-2xl font-bold">
                 Driveway Cleaning
               </h2>
@@ -43,14 +44,20 @@ export default function Services() {
                   <li>✓ Surface cleaning</li>
                   <li>✓ Removal of dirt and buildup</li>
                   <li>✓ Thorough cleaning of the driveway area</li>
-                </ul>
+                </ul> <a
+  href="/#quote"
+  className="mt-8 inline-flex rounded-full border border-zinc-300 px-5 py-3 text-sm font-semibold transition hover:bg-zinc-100"
+>
+  Request a Quote
+</a>
               </div>
             </article>
 
             {/* House Washing */}
-            <article className="rounded-3xl border border-zinc-200 p-8">
-              <p className="text-4xl">🧼</p>
-
+            <article className="flex h-full flex-col rounded-3xl border border-zinc-200 p-8 transition hover:-translate-y-1 hover:shadow-lg">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+                Service 02
+              </p>
               <h2 className="mt-6 text-2xl font-bold">
                 House Washing
               </h2>
@@ -67,14 +74,20 @@ export default function Services() {
                   <li>✓ Exterior surface cleaning</li>
                   <li>✓ Removal of dirt and buildup</li>
                   <li>✓ Careful cleaning around your home</li>
-                </ul>
+                </ul> <a
+  href="/#quote"
+  className="mt-8 inline-flex rounded-full border border-zinc-300 px-5 py-3 text-sm font-semibold transition hover:bg-zinc-100"
+>
+  Request a Quote
+</a>
               </div>
             </article>
 
             {/* Deck & Patio Cleaning */}
-            <article className="rounded-3xl border border-zinc-200 p-8">
-              <p className="text-4xl">🌿</p>
-
+            <article className="flex h-full flex-col rounded-3xl border border-zinc-200 p-8 transition hover:-translate-y-1 hover:shadow-lg">
+<p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+  Service 03
+</p>
               <h2 className="mt-6 text-2xl font-bold">
                 Deck &amp; Patio Cleaning
               </h2>
@@ -91,7 +104,12 @@ export default function Services() {
                   <li>✓ Surface cleaning</li>
                   <li>✓ Removal of dirt and buildup</li>
                   <li>✓ Cleaning of outdoor living areas</li>
-                </ul>
+                </ul> <a
+  href="/#quote"
+  className="mt-8 inline-flex rounded-full border border-zinc-300 px-5 py-3 text-sm font-semibold transition hover:bg-zinc-100"
+>
+  Request a Quote
+</a>
               </div>
             </article>
           </div>
@@ -102,15 +120,13 @@ export default function Services() {
       <section className="bg-zinc-100 px-6 py-24 text-center">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-4xl font-bold tracking-tight">
-            Ready for a cleaner property?
-          </h2>
+Ready to make your home look its best?          </h2>
 
           <p className="mt-5 text-lg leading-8 text-zinc-600">
-            Contact Michael&apos;s Pressure Washing to request a free quote.
-          </p>
+Get in touch with Michael&apos;s Pressure Washing today for a free, no-obligation quote.          </p>
 
           <a
-            href="/"
+           href="/#quote"
             className="mt-8 inline-flex rounded-full bg-zinc-950 px-7 py-4 font-semibold text-white transition hover:bg-zinc-800"
           >
             Get a Free Quote

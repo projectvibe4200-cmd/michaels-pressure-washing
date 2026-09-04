@@ -1,28 +1,84 @@
+"use client";
+
 import Link from "next/link";
+import { useState } from "react";
 export default function Home() {
+  const [menuOpen, setMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
   return (
     <main className="min-h-screen bg-white text-zinc-900">
       {/* Navigation */}
-<header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
-          <Link href="/" className="text-xl font-bold tracking-tight">
-  Michael&apos;s Pressure Washing
-</Link>
-          <nav className="hidden gap-8 text-sm font-medium md:flex">
+<header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">
+  <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+    
+    <Link href="/" className="text-xl font-bold tracking-tight">
+      Michael&apos;s Pressure Washing
+    </Link>
+
+   <nav className="hidden gap-8 text-sm font-medium md:flex">
   <Link href="/services" className="hover:text-zinc-500">
     Services
   </Link>
-  <Link href="/#about" className="hover:text-zinc-500">
+
+  <Link href="#about" className="hover:text-zinc-500">
     About
   </Link>
-  <Link href="/#areas" className="hover:text-zinc-500">
+
+  <Link href="#areas" className="hover:text-zinc-500">
     Service Areas
   </Link>
-  <Link href="/#quote" className="hover:text-zinc-500">
+
+  <Link href="#quote" className="hover:text-zinc-500">
     Get a Quote
   </Link>
 </nav>
-        </div>
-      </header>
+
+    <button
+      type="button"
+className="rounded-full border border-zinc-300 px-4 py-2 text-sm font-semibold transition hover:bg-zinc-100 md:hidden"      onClick={() => setMenuOpen(!menuOpen)}
+    >
+{menuOpen ? "Close" : "Menu"}    </button>
+
+  </div>
+  {menuOpen && (
+  <div className="border-t border-zinc-200 bg-white px-6 py-4 md:hidden">
+    <nav className="flex flex-col gap-4 text-sm font-medium">
+      <Link
+  href="/services"
+  onClick={() => setMenuOpen(false)}
+  className="hover:text-zinc-500"
+>
+  Services
+</Link>
+
+<Link
+  href="#about"
+  onClick={() => setMenuOpen(false)}
+  className="hover:text-zinc-500"
+>
+  About
+</Link>
+
+<Link
+  href="#areas"
+  onClick={() => setMenuOpen(false)}
+  className="hover:text-zinc-500"
+>
+  Service Areas
+</Link>
+
+<Link
+  href="#quote"
+  onClick={() => setMenuOpen(false)}
+  className="hover:text-zinc-500"
+>
+  Get a Quote
+</Link>
+    </nav>
+  </div>
+)}
+</header>
 
       {/* Hero */}
       <section className="bg-zinc-950 text-white">
@@ -75,95 +131,153 @@ className="inline-flex items-center rounded-full bg-white px-8 py-4 text-base fo
               Our Services
             </p>
 
-            <h2 className="mt-3 text-4xl font-bold tracking-tight">
-              Professional cleaning for your property.
-            </h2>
+   <h2 className="mt-3 text-4xl font-bold tracking-tight">
+  Professional pressure washing for your home.
+</h2>
 
             <p className="mt-5 text-lg leading-8 text-zinc-600">
-              We help homeowners keep their outdoor surfaces looking clean,
-              fresh, and well maintained.
+             We help homeowners improve their property&apos;s appearance by
+removing dirt, grime, stains, and surface buildup.
             </p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <article className="rounded-2xl border border-zinc-200 p-8">
-              <div className="text-4xl">🏠</div>
-
+<article className="rounded-2xl border border-zinc-200 p-8 transition hover:-translate-y-1 hover:shadow-lg"><div className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+  Service 01
+</div>
               <h3 className="mt-6 text-2xl font-semibold">
                 Driveway Cleaning
               </h3>
 
-              <p className="mt-4 leading-7 text-zinc-600">
-                Remove built-up dirt, grime, and stains to give your driveway
-                a cleaner, more refreshed appearance.
-              </p>
+<p className="mt-4 leading-7 text-zinc-600">
+  Restore the look of your driveway by removing built-up dirt,
+  grime, stains, and other surface buildup.
+</p><p className="mt-4 text-sm font-medium text-zinc-500">
+  Concrete &amp; paved surfaces
+</p>
             </article>
 
-            <article className="rounded-2xl border border-zinc-200 p-8">
-              <div className="text-4xl">🧼</div>
-
+            <article className="rounded-2xl border border-zinc-200 p-8 transition hover:-translate-y-1 hover:shadow-lg">
+<div className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+  Service 02
+</div>
               <h3 className="mt-6 text-2xl font-semibold">
                 House Washing
               </h3>
 
               <p className="mt-4 leading-7 text-zinc-600">
-                Give the exterior of your home a fresh appearance by cleaning
-                away accumulated dirt and buildup.
-              </p>
+  Refresh your home&apos;s exterior by removing dirt, grime,
+  and buildup that can make your siding look dull and weathered.
+</p>
+<p className="mt-4 text-sm font-medium text-zinc-500">
+  Siding &amp; exterior surfaces
+</p>
             </article>
 
-            <article className="rounded-2xl border border-zinc-200 p-8">
-              <div className="text-4xl">🌿</div>
-
+            <article className="rounded-2xl border border-zinc-200 p-8 transition hover:-translate-y-1 hover:shadow-lg">
+<div className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+  Service 03
+</div>
               <h3 className="mt-6 text-2xl font-semibold">
                 Deck &amp; Patio Cleaning
               </h3>
 
               <p className="mt-4 leading-7 text-zinc-600">
-                Clean outdoor living spaces so your deck or patio looks ready
-                for relaxing, entertaining, and enjoying.
-              </p>
+  Clean your deck or patio by removing dirt, grime, and surface
+  buildup so your outdoor space is ready to enjoy.
+</p>
+<p className="mt-4 text-sm font-medium text-zinc-500">
+  Decks, patios &amp; outdoor spaces
+</p>
             </article>
           </div>
-        </div>
+<div className="mt-12 text-center">  <a
+    href="#quote"
+    className="inline-flex items-center rounded-full bg-zinc-950 px-7 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-zinc-800"
+  >
+    Get a Free Quote
+  </a>
+</div>   </div>
       </section>
 
-      {/* About / Why Us */}
-      <section id="about" className="bg-zinc-100 px-6 py-24">
-        <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center">
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
-              Why Michael&apos;s
-            </p>
+   {/* About / Why Us */}
+<section id="about" className="bg-zinc-100 px-6 py-24">
+  <div className="mx-auto grid max-w-6xl gap-12 md:grid-cols-2 md:items-center">
+    <div>
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+        Why Choose Michael&apos;s?
+      </p>
 
-            <h2 className="mt-3 text-4xl font-bold tracking-tight">
-              Family owned. Experienced. Local.
-            </h2>
+      <h2 className="mt-3 text-4xl font-bold tracking-tight">
+        20 years of experience. One family. Quality you can trust.
+      </h2>
 
-            <p className="mt-6 text-lg leading-8 text-zinc-600">
-              Michael&apos;s Pressure Washing is a family-owned and operated
-              business with about 20 years of experience in the pressure
-              washing industry.
-            </p>
+      <p className="mt-6 text-lg leading-8 text-zinc-600">
+        Michael&apos;s Pressure Washing is a family-owned and operated
+        business with about 20 years of experience helping homeowners
+        keep their properties looking their best.
+      </p>
 
-            <p className="mt-4 text-lg leading-8 text-zinc-600">
-              We believe in doing quality work and helping homeowners take
-              pride in the appearance of their property.
-            </p>
-          </div>
+      <p className="mt-4 text-lg leading-8 text-zinc-600">
+        We believe in doing quality work, treating every property with care,
+        and leaving your home looking cleaner, brighter, and better maintained.
+      </p>
 
-          <div className="rounded-3xl bg-zinc-950 p-10 text-white">
-            <p className="text-6xl font-bold">20</p>
-            <p className="mt-2 text-xl font-semibold">
-              Years of experience
-            </p>
-            <p className="mt-4 leading-7 text-zinc-400">
-              Family-owned and operated, serving homeowners in the Austin
-              area.
-            </p>
-          </div>
+      <div className="mt-8 space-y-4">
+        <div className="flex gap-3">
+          <span className="font-bold text-zinc-900">✓</span>
+          <p className="text-zinc-600">
+            Family owned and operated
+          </p>
         </div>
-      </section>
+
+        <div className="flex gap-3">
+          <span className="font-bold text-zinc-900">✓</span>
+          <p className="text-zinc-600">
+            About 20 years of experience
+          </p>
+        </div>
+
+        <div className="flex gap-3">
+          <span className="font-bold text-zinc-900">✓</span>
+          <p className="text-zinc-600">
+            Serving homeowners throughout the Austin area
+          </p>
+        </div>
+      </div>
+
+      <a
+        href="#quote"
+        className="mt-8 inline-flex items-center rounded-full bg-zinc-950 px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-zinc-800"
+      >
+        Get a Free Quote
+      </a>
+    </div>
+
+    <div className="rounded-3xl bg-zinc-950 p-10 text-white">
+      <p className="text-6xl font-bold">20+</p>
+
+      <p className="mt-2 text-xl font-semibold">
+        Years of experience
+      </p>
+
+      <p className="mt-4 leading-7 text-zinc-400">
+        Family-owned and operated, serving homeowners throughout Austin
+        and the surrounding communities.
+      </p>
+
+      <div className="mt-8 border-t border-zinc-800 pt-6">
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+          Local service
+        </p>
+
+        <p className="mt-2 text-lg font-semibold text-white">
+          Austin, Round Rock, Cedar Park &amp; Pflugerville
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Service Areas */}
       <section id="areas" className="px-6 py-24">
@@ -174,23 +288,39 @@ className="inline-flex items-center rounded-full bg-white px-8 py-4 text-base fo
             </p>
 
             <h2 className="mt-3 text-4xl font-bold tracking-tight">
-              Proudly serving the Austin area.
-            </h2>
+  Pressure washing across Austin and nearby communities.
+</h2>
           </div>
 
-          <div className="mt-12 grid gap-4 sm:grid-cols-3">
-            <div className="rounded-2xl bg-zinc-100 p-8 text-center">
-              <h3 className="text-xl font-semibold">Round Rock</h3>
-            </div>
+         <div className="mt-12 grid gap-4 sm:grid-cols-4">
+  <div className="rounded-2xl bg-zinc-100 p-8 text-center transition hover:-translate-y-1 hover:shadow-lg">
+    <h3 className="text-xl font-semibold">Austin</h3>
+    <p className="mt-2 text-sm text-zinc-500">
+  Pressure washing services
+</p>
+  </div>
 
-            <div className="rounded-2xl bg-zinc-100 p-8 text-center">
-              <h3 className="text-xl font-semibold">Cedar Park</h3>
-            </div>
+  <div className="rounded-2xl bg-zinc-100 p-8 text-center transition hover:-translate-y-1 hover:shadow-lg">
+    <h3 className="text-xl font-semibold">Round Rock</h3>
+    <p className="mt-2 text-sm text-zinc-500">
+      Pressure washing services
+    </p>
+  </div>
 
-            <div className="rounded-2xl bg-zinc-100 p-8 text-center">
-              <h3 className="text-xl font-semibold">Pflugerville</h3>
-            </div>
-          </div>
+  <div className="rounded-2xl bg-zinc-100 p-8 text-center transition hover:-translate-y-1 hover:shadow-lg">
+    <h3 className="text-xl font-semibold">Cedar Park</h3>
+    <p className="mt-2 text-sm text-zinc-500">
+      Pressure washing services
+    </p>
+  </div>
+
+  <div className="rounded-2xl bg-zinc-100 p-8 text-center transition hover:-translate-y-1 hover:shadow-lg">
+    <h3 className="text-xl font-semibold">Pflugerville</h3>
+    <p className="mt-2 text-sm text-zinc-500">
+      Pressure washing services
+    </p>
+  </div>
+</div>
         </div>
       </section>
 
