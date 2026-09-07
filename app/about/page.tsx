@@ -1,5 +1,112 @@
+"use client";
+
+import Link from "next/link";
+import { useState } from "react";
 export default function About() {
-  return (
+    const [menuOpen, setMenuOpen] = useState(false);
+    return (
+  <>
+    <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-5">
+        <Link
+          href="/"
+          className="text-xl font-bold tracking-tight text-zinc-900"
+        >
+          Michael&apos;s Pressure Washing
+        </Link>
+
+        <nav className="hidden gap-8 text-sm font-semibold text-zinc-900 md:flex">
+          <Link
+            href="/services"
+            className="text-zinc-900 transition hover:text-zinc-500"
+          >
+            Services
+          </Link>
+
+          <Link
+            href="/contact"
+            className="text-zinc-900 transition hover:text-zinc-500"
+          >
+            Contact
+          </Link>
+
+          <Link
+            href="/about"
+            className="text-zinc-900 transition hover:text-zinc-500"
+          >
+            About
+          </Link>
+
+          <Link
+            href="/#areas"
+            className="text-zinc-900 transition hover:text-zinc-500"
+          >
+            Service Areas
+          </Link>
+
+          <Link
+            href="/#quote"
+            className="text-zinc-900 transition hover:text-zinc-500"
+          >
+            Get a Quote
+          </Link>
+        </nav>
+                <button
+          type="button"
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="rounded-full border border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-900 transition hover:bg-zinc-100 md:hidden"
+        >
+          {menuOpen ? "Close" : "Menu"}
+        </button>
+      </div>
+      
+            {menuOpen && (
+      <div className="border-t border-zinc-200 bg-white px-6 py-4 md:hidden">
+        <nav className="flex flex-col gap-4 text-sm font-medium text-zinc-900">
+          <Link
+            href="/services"
+            onClick={() => setMenuOpen(false)}
+            className="hover:text-zinc-500"
+          >
+            Services
+          </Link>
+
+          <Link
+            href="/contact"
+            onClick={() => setMenuOpen(false)}
+            className="hover:text-zinc-500"
+          >
+            Contact
+          </Link>
+
+          <Link
+            href="/about"
+            onClick={() => setMenuOpen(false)}
+            className="hover:text-zinc-500"
+          >
+            About
+          </Link>
+
+          <Link
+            href="/#areas"
+            onClick={() => setMenuOpen(false)}
+            className="hover:text-zinc-500"
+          >
+            Service Areas
+          </Link>
+
+          <Link
+            href="/#quote"
+            onClick={() => setMenuOpen(false)}
+            className="hover:text-zinc-500"
+          >
+            Get a Quote
+          </Link>
+        </nav>
+      </div>
+    )}
+    </header>
+
     <main className="min-h-screen bg-white text-zinc-900">
       <section className="bg-zinc-950 px-6 py-24 text-white">
         <div className="mx-auto max-w-5xl">
@@ -104,8 +211,9 @@ export default function About() {
             Michael&apos;s Pressure Washing serves Austin and nearby
             communities including Round Rock, Cedar Park, and Pflugerville.
           </p>
-        </div>
-      </section>
-    </main>
-  );
+             </div>
+    </section>
+  </main>
+</>
+);
 }

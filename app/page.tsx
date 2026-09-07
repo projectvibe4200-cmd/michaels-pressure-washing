@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useState } from "react";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <main className="min-h-screen bg-white text-zinc-900">
@@ -20,7 +19,9 @@ export default function Home() {
   <Link href="/services" className="hover:text-zinc-500">
     Services
   </Link>
-
+<Link href="/contact" className="hover:text-zinc-500">
+  Contact
+</Link>
   <Link href="#about" className="hover:text-zinc-500">
     About
   </Link>
@@ -36,6 +37,7 @@ export default function Home() {
 
     <button
       type="button"
+      aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
 className="rounded-full border border-zinc-300 px-4 py-2 text-sm font-semibold transition hover:bg-zinc-100 md:hidden"      onClick={() => setMenuOpen(!menuOpen)}
     >
 {menuOpen ? "Close" : "Menu"}    </button>
@@ -51,7 +53,13 @@ className="rounded-full border border-zinc-300 px-4 py-2 text-sm font-semibold t
 >
   Services
 </Link>
-
+<Link
+  href="/contact"
+  onClick={() => setMenuOpen(false)}
+  className="hover:text-zinc-500"
+>
+  Contact
+</Link>
 <Link
   href="#about"
   onClick={() => setMenuOpen(false)}
@@ -115,6 +123,8 @@ className="inline-flex items-center rounded-full bg-white px-8 py-4 text-base fo
   <img
   src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80"
   alt="Professional pressure washing service"
+  loading="eager"
+
   className="h-full w-full object-cover"
 />
 </div>
@@ -278,7 +288,150 @@ removing dirt, grime, stains, and surface buildup.
     </div>
   </div>
 </section>
+<section className="bg-white px-6 py-24">
+  <div className="mx-auto max-w-6xl">
+    <div className="max-w-2xl">
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+        Customer Reviews
+      </p>
 
+      <h2 className="mt-3 text-4xl font-bold tracking-tight">
+        Trusted by homeowners across the Austin area.
+      </h2>
+
+      <p className="mt-5 text-lg leading-8 text-zinc-600">
+        Here&apos;s what some of our customers say about working with
+        Michael&apos;s Pressure Washing.
+      </p>
+    </div>
+
+    <div className="mt-12 grid gap-6 md:grid-cols-3">
+      <article className="rounded-2xl border border-zinc-200 p-8">
+        <div className="text-lg tracking-wide">★★★★★</div>
+
+        <p className="mt-5 leading-7 text-zinc-600">
+          “The driveway looks completely different. The team was professional,
+          quick, and left everything looking great.”
+        </p>
+
+        <p className="mt-6 font-semibold">— Sarah M.</p>
+        <p className="mt-1 text-sm text-zinc-500">Austin, TX</p>
+      </article>
+
+      <article className="rounded-2xl border border-zinc-200 p-8">
+        <div className="text-lg tracking-wide">★★★★★</div>
+
+        <p className="mt-5 leading-7 text-zinc-600">
+          “Our house had years of dirt buildup on the outside. Michael&apos;s
+          Pressure Washing made it look fresh again.”
+        </p>
+
+        <p className="mt-6 font-semibold">— James R.</p>
+        <p className="mt-1 text-sm text-zinc-500">Round Rock, TX</p>
+      </article>
+
+      <article className="rounded-2xl border border-zinc-200 p-8">
+        <div className="text-lg tracking-wide">★★★★★</div>
+
+        <p className="mt-5 leading-7 text-zinc-600">
+          “Easy to work with, great communication, and the patio came out
+          looking fantastic. I&apos;d definitely use them again.”
+        </p>
+
+        <p className="mt-6 font-semibold">— Emily T.</p>
+        <p className="mt-1 text-sm text-zinc-500">Cedar Park, TX</p>
+      </article>
+    </div>
+  </div>
+</section>
+<section className="bg-zinc-100 px-6 py-24">
+  <div className="mx-auto max-w-6xl">
+    <div className="max-w-2xl">
+      <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-500">
+        Before &amp; After
+      </p>
+
+      <h2 className="mt-3 text-4xl font-bold tracking-tight">
+        See the difference professional cleaning can make.
+      </h2>
+
+      <p className="mt-5 text-lg leading-8 text-zinc-600">
+        Pressure washing can remove years of dirt, grime, stains, and buildup
+        from outdoor surfaces.
+      </p>
+    </div>
+
+    <div className="mt-12 grid gap-6 md:grid-cols-2">
+      <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white">
+        <div className="flex h-72 items-center justify-center bg-zinc-300">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-zinc-600">
+            Before
+          </p>
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-xl font-bold">Dirty driveway</h3>
+          <p className="mt-2 text-zinc-600">
+            Built-up dirt, stains, and surface grime.
+          </p>
+        </div>
+      </div>
+
+      <div className="overflow-hidden rounded-3xl border border-zinc-200 bg-white">
+        <div className="flex h-72 items-center justify-center bg-zinc-950">
+          <p className="text-sm font-semibold uppercase tracking-[0.2em] text-white">
+            After
+          </p>
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-xl font-bold">Clean driveway</h3>
+          <p className="mt-2 text-zinc-600">
+            A refreshed surface with a cleaner, brighter appearance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section className="bg-white px-6 py-20">
+  <div className="mx-auto max-w-6xl">
+    <div className="grid gap-6 md:grid-cols-3">
+      <div className="rounded-2xl border border-zinc-200 p-8">
+        <p className="text-4xl font-bold">20+</p>
+        <h3 className="mt-3 text-xl font-bold">
+          Years of Experience
+        </h3>
+        <p className="mt-3 leading-7 text-zinc-600">
+          About two decades of experience helping homeowners keep their
+          properties looking their best.
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-zinc-200 p-8">
+        <p className="text-4xl font-bold">Family</p>
+        <h3 className="mt-3 text-xl font-bold">
+          Owned &amp; Operated
+        </h3>
+        <p className="mt-3 leading-7 text-zinc-600">
+          A family business focused on treating every customer and property
+          with care.
+        </p>
+      </div>
+
+      <div className="rounded-2xl border border-zinc-200 p-8">
+        <p className="text-4xl font-bold">Free</p>
+        <h3 className="mt-3 text-xl font-bold">
+          No-Obligation Quotes
+        </h3>
+        <p className="mt-3 leading-7 text-zinc-600">
+          Tell us what you need cleaned and get a straightforward quote with
+          no pressure.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
       {/* Service Areas */}
       <section id="areas" className="px-6 py-24">
         <div className="mx-auto max-w-6xl">
@@ -320,9 +473,18 @@ removing dirt, grime, stains, and surface buildup.
       Pressure washing services
     </p>
   </div>
-</div>
         </div>
-      </section>
+
+        <div className="mt-8 text-center">
+          <a
+            href="#quote"
+            className="inline-flex items-center rounded-full bg-zinc-950 px-7 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-zinc-800"
+          >
+            Get a Free Quote
+          </a>
+        </div>
+      </div>
+    </section>
 
      {/* Quote Form */}
 <section id="quote" className="bg-zinc-950 px-6 py-24 text-white">
@@ -339,13 +501,43 @@ removing dirt, grime, stains, and surface buildup.
       will get back to you.
     </p>
 
-<form className="mt-10 border-t border-zinc-800 pt-8 space-y-7">      {/* Name */}
+<form
+  className="mt-10 border-t border-zinc-800 pt-8 space-y-7"
+ onSubmit={async (event) => {
+  event.preventDefault();
+
+  const formData = new FormData(event.currentTarget);
+
+  const response = await fetch("/api/quote", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({
+      name: formData.get("name"),
+      phone: formData.get("phone"),
+      email: formData.get("email"),
+      service: formData.get("service"),
+      message: formData.get("message"),
+    }),
+  });
+
+  const result = await response.json();
+
+  if (response.ok) {
+    alert("Your quote request was sent successfully!");
+  } else {
+    alert(result.error || "Something went wrong. Please try again.");
+  }
+}}
+>      {/* Name */}
       <div>
         <label htmlFor="name" className="mb-2 block text-sm font-medium">
   Name <span className="text-zinc-400">*</span>
 </label>
         <input
           id="name"
+          name="name"
           type="text"
           placeholder="Your name"
           required
@@ -361,6 +553,7 @@ removing dirt, grime, stains, and surface buildup.
 </label>
         <input
           id="phone"
+          name="phone"
           type="tel"
 placeholder="(512) 555-0123"
           required
@@ -377,6 +570,7 @@ placeholder="(512) 555-0123"
         <input
           id="email"
           type="email"
+          name="email"
           placeholder="you@example.com"
           required
           autoComplete="email"
@@ -391,6 +585,7 @@ placeholder="(512) 555-0123"
         </label>
         <select
           id="service"
+          name="service"
           required
           autoComplete="off"
           className="w-full rounded-xl border border-zinc-700 bg-zinc-900 px-4 py-3 text-white outline-none focus:border-white"
@@ -413,6 +608,7 @@ placeholder="(512) 555-0123"
         </label>
         <textarea
           id="message"
+          name="message"
           rows={6}
           placeholder="Tell us about your project..."
           required
