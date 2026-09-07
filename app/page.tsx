@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
-
+import ServiceCard from "./components/ServiceCard";
 export default function Home() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -120,64 +120,66 @@ export default function Home() {
       </header>
 
       {/* Hero */}
-      <section className="bg-zinc-950 text-white">
-        <div className="mx-auto grid max-w-7xl gap-12 px-6 py-20 md:grid-cols-2 md:items-center md:py-28">
-          <div>
-            <p className="mb-5 text-sm font-bold uppercase tracking-[0.2em] text-blue-400">
-              Austin, Texas
-            </p>
+     {/* Hero */}
+<section className="relative overflow-hidden bg-zinc-950 text-white">
+  <img
+    src="/hero-pressure-washing.jpg"
+    alt="Professional pressure washing a residential driveway"
+    className="absolute inset-0 h-full w-full object-cover"
+  />
 
-            <h1 className="max-w-2xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
-              Professional Pressure Washing in Austin, TX.
-            </h1>
+  <div className="absolute inset-0 bg-zinc-950/60" />
 
-            <p className="mt-6 max-w-xl text-lg leading-8 text-zinc-300">
-              Restore your home&apos;s exterior with dependable pressure
-              washing services from a family-owned local business with 20+
-              years of experience. Serving Austin and surrounding communities.
-            </p>
+  <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/60 to-transparent" />
 
-            <div className="mt-8 flex flex-wrap gap-x-5 gap-y-3 text-sm font-semibold text-zinc-300">
-              <span className="flex items-center gap-2">
-                <span className="text-blue-400">✓</span>
-                20+ Years Experience
-              </span>
+  <div className="relative mx-auto flex min-h-[680px] max-w-7xl items-center px-6 py-24 md:min-h-[720px] md:py-28">
+    <div className="max-w-3xl">
+      <p className="mb-5 text-sm font-bold uppercase tracking-[0.2em] text-blue-400">
+        Austin, Texas
+      </p>
 
-              <span className="flex items-center gap-2">
-                <span className="text-blue-400">✓</span>
-                Family Owned
-              </span>
+      <h1 className="max-w-3xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
+        Professional Pressure Washing in Austin, TX.
+      </h1>
 
-              <span className="flex items-center gap-2">
-                <span className="text-blue-400">✓</span>
-                Free Quotes
-              </span>
-            </div>
+      <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-200 md:text-xl">
+        Restore your home&apos;s exterior with dependable pressure washing
+        services from a family-owned local business with 20+ years of
+        experience. Serving Austin and surrounding communities.
+      </p>
 
-            <div className="mt-9">
-              <a
-                href="#quote"
-                className="inline-flex items-center rounded-full bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl"
-              >
-                Get a Free Quote
-              </a>
+      <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-zinc-200">
+        <span className="flex items-center gap-2">
+          <span className="text-blue-400">✓</span>
+          20+ Years Experience
+        </span>
 
-              <p className="mt-3 text-sm text-zinc-400">
-                Free estimates • No obligation
-              </p>
-            </div>
-          </div>
+        <span className="flex items-center gap-2">
+          <span className="text-blue-400">✓</span>
+          Family Owned
+        </span>
 
-          <div className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 shadow-2xl">
-            <img
-              src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80"
-              alt="Professional pressure washing service in Austin, Texas"
-              loading="eager"
-              className="h-full min-h-[420px] w-full object-cover"
-            />
-          </div>
-        </div>
-      </section>
+        <span className="flex items-center gap-2">
+          <span className="text-blue-400">✓</span>
+          Free Quotes
+        </span>
+      </div>
+
+      <div className="mt-9">
+        <a
+          href="#quote"
+          className="inline-flex items-center rounded-full bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl"
+        >
+          Get a Free Quote
+        </a>
+
+        <p className="mt-3 text-sm text-zinc-300">
+          Free estimates • No obligation
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
       {/* Services */}
       <section className="bg-white px-6 py-20 md:py-28">
@@ -201,50 +203,29 @@ export default function Home() {
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <article className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-lg font-black text-blue-600">
-                01
-              </div>
+          <ServiceCard
+  image="/driveway-cleaning.jpg"
+  alt="Professional driveway pressure washing"
+  number="01"
+  title="Driveway Cleaning"
+  description="Remove dirt, grime, stains, and buildup to give your driveway a cleaner, brighter appearance."
+/>
 
-              <h3 className="mt-6 text-2xl font-black">
-                Driveway Cleaning
-              </h3>
+<ServiceCard
+  image="/house-washing.jpg"
+  alt="Professional pressure washing of a house exterior"
+  number="02"
+  title="House Washing"
+  description="Freshen up your home's exterior by removing dirt, algae, and other buildup from exterior surfaces."
+/>
 
-              <p className="mt-4 leading-7 text-zinc-600">
-                Remove dirt, grime, stains, and buildup to give your driveway
-                a cleaner, brighter appearance.
-              </p>
-            </article>
-
-            <article className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-lg font-black text-blue-600">
-                02
-              </div>
-
-              <h3 className="mt-6 text-2xl font-black">
-                House Washing
-              </h3>
-
-              <p className="mt-4 leading-7 text-zinc-600">
-                Freshen up your home&apos;s exterior by removing dirt, algae,
-                and other buildup from exterior surfaces.
-              </p>
-            </article>
-
-            <article className="rounded-3xl border border-zinc-200 bg-white p-8 shadow-sm transition hover:-translate-y-1 hover:border-blue-200 hover:shadow-lg">
-              <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-blue-50 text-lg font-black text-blue-600">
-                03
-              </div>
-
-              <h3 className="mt-6 text-2xl font-black">
-                Deck &amp; Patio Cleaning
-              </h3>
-
-              <p className="mt-4 leading-7 text-zinc-600">
-                Restore outdoor living spaces by removing grime and buildup
-                from decks, patios, and other hard surfaces.
-              </p>
-            </article>
+<ServiceCard
+  image="/deck-patio-cleaning.jpg"
+  alt="Professional pressure washing of a wooden deck and patio"
+  number="03"
+  title="Deck & Patio Cleaning"
+  description="Restore outdoor living spaces by removing grime and buildup from decks, patios, and other hard surfaces."
+/>
           </div>
 
           <a
