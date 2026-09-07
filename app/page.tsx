@@ -171,7 +171,7 @@ export default function Home() {
           <div className="overflow-hidden rounded-3xl border border-zinc-800 bg-zinc-900 shadow-2xl">
             <img
               src="https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?auto=format&fit=crop&w=1200&q=80"
-              alt="Professional pressure washing service"
+              alt="Professional pressure washing service in Austin, Texas"
               loading="eager"
               className="h-full min-h-[420px] w-full object-cover"
             />
