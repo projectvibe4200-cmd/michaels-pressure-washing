@@ -1,184 +1,75 @@
 "use client";
 
-import Link from "next/link";
 import { useState } from "react";
 import ServiceCard from "./components/ServiceCard";
+import Header from "./components/Header";
+
 export default function Home() {
-  const [menuOpen, setMenuOpen] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   return (
     <main className="min-h-screen bg-white text-zinc-950">
-      {/* Header */}
-      <header className="sticky top-0 z-50 border-b border-zinc-200 bg-white/95 backdrop-blur">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
-          <Link
-            href="/"
-            className="max-w-[180px] text-lg font-black leading-tight tracking-tight sm:max-w-none sm:text-xl"
-          >
-            Michael&apos;s Pressure Washing
-          </Link>
+      <Header />
 
-          <nav className="hidden items-center gap-8 md:flex">
-            <Link
-              href="/"
-              className="text-sm font-semibold text-zinc-700 transition hover:text-blue-600"
-            >
-              Home
-            </Link>
-            <Link
-              href="/services"
-              className="text-sm font-semibold text-zinc-700 transition hover:text-blue-600"
-            >
-              Services
-            </Link>
-            <Link
-              href="/about"
-              className="text-sm font-semibold text-zinc-700 transition hover:text-blue-600"
-            >
-              About
-            </Link>
-            <Link
-              href="/contact"
-              className="text-sm font-semibold text-zinc-700 transition hover:text-blue-600"
-            >
-              Contact
-            </Link>
-          </nav>
+      {/* Hero */}
+      <section className="relative overflow-hidden bg-zinc-950 text-white">
+        <img
+          src="/hero-pressure-washing.jpg"
+          alt="Professional pressure washing a residential driveway"
+          className="absolute inset-0 h-full w-full object-cover"
+        />
 
-          <div className="flex items-center gap-2 md:hidden">
-            <a
-              href="tel:9292999611"
-              aria-label="Call Michael's Pressure Washing"
-              className="flex h-10 items-center justify-center rounded-full bg-blue-600 px-4 text-sm font-bold text-white transition hover:bg-blue-700"
-            >
-              Call
-            </a>
+        <div className="absolute inset-0 bg-zinc-950/60" />
+        <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/60 to-transparent" />
 
-            <button
-              type="button"
-              onClick={() => setMenuOpen(!menuOpen)}
-              aria-label={
-                menuOpen ? "Close navigation menu" : "Open navigation menu"
-              }
-              className="flex h-10 items-center justify-center rounded-full border border-zinc-300 px-4 text-sm font-semibold text-zinc-900"
-            >
-              {menuOpen ? "Close" : "Menu"}
-            </button>
-          </div>
-        </div>
+        <div className="relative mx-auto flex min-h-[680px] max-w-7xl items-center px-6 py-24 md:min-h-[720px] md:py-28">
+          <div className="max-w-3xl">
+            <p className="mb-5 text-sm font-bold uppercase tracking-[0.2em] text-blue-400">
+              Austin, Texas
+            </p>
 
-        {menuOpen && (
-          <nav className="border-t-2 border-blue-600 bg-zinc-50 px-5 py-5 shadow-lg md:hidden">
-            <div className="mb-3 px-4 text-xs font-bold uppercase tracking-[0.2em] text-blue-600">
-              Navigation
+            <h1 className="max-w-3xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
+              Professional Pressure Washing in Austin, TX.
+            </h1>
+
+            <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-200 md:text-xl">
+              Restore your home&apos;s exterior with dependable pressure
+              washing services from a family-owned local business with 20+
+              years of experience. Serving Austin and surrounding communities.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-zinc-200">
+              <span className="flex items-center gap-2">
+                <span className="text-blue-400">✓</span>
+                20+ Years Experience
+              </span>
+
+              <span className="flex items-center gap-2">
+                <span className="text-blue-400">✓</span>
+                Family Owned
+              </span>
+
+              <span className="flex items-center gap-2">
+                <span className="text-blue-400">✓</span>
+                Free Quotes
+              </span>
             </div>
 
-            <div className="flex flex-col gap-2">
-              <Link
-                href="/"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-xl bg-white px-4 py-4 font-bold text-zinc-900 shadow-sm ring-1 ring-zinc-200 transition hover:bg-blue-600 hover:text-white"
-              >
-                Home
-              </Link>
-
-              <Link
-                href="/services"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-xl bg-white px-4 py-4 font-bold text-zinc-900 shadow-sm ring-1 ring-zinc-200 transition hover:bg-blue-600 hover:text-white"
-              >
-                Services
-              </Link>
-
-              <Link
-                href="/about"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-xl bg-white px-4 py-4 font-bold text-zinc-900 shadow-sm ring-1 ring-zinc-200 transition hover:bg-blue-600 hover:text-white"
-              >
-                About
-              </Link>
-
-              <Link
-                href="/contact"
-                onClick={() => setMenuOpen(false)}
-                className="rounded-xl bg-white px-4 py-4 font-bold text-zinc-900 shadow-sm ring-1 ring-zinc-200 transition hover:bg-blue-600 hover:text-white"
-              >
-                Contact
-              </Link>
-
+            <div className="mt-9">
               <a
                 href="#quote"
-                onClick={() => setMenuOpen(false)}
-                className="mt-2 flex items-center justify-center rounded-xl bg-blue-600 px-4 py-4 font-bold text-white shadow-sm transition hover:bg-blue-700"
+                className="inline-flex items-center rounded-full bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl"
               >
                 Request a Free Quote
               </a>
+
+              <p className="mt-3 text-sm text-zinc-300">
+                Free estimates • No obligation
+              </p>
             </div>
-          </nav>
-        )}
-      </header>
-
-      {/* Hero */}
-     {/* Hero */}
-<section className="relative overflow-hidden bg-zinc-950 text-white">
-  <img
-    src="/hero-pressure-washing.jpg"
-    alt="Professional pressure washing a residential driveway"
-    className="absolute inset-0 h-full w-full object-cover"
-  />
-
-  <div className="absolute inset-0 bg-zinc-950/60" />
-
-  <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/90 via-zinc-950/60 to-transparent" />
-
-  <div className="relative mx-auto flex min-h-[680px] max-w-7xl items-center px-6 py-24 md:min-h-[720px] md:py-28">
-    <div className="max-w-3xl">
-      <p className="mb-5 text-sm font-bold uppercase tracking-[0.2em] text-blue-400">
-        Austin, Texas
-      </p>
-
-      <h1 className="max-w-3xl text-5xl font-black leading-tight tracking-tight md:text-7xl">
-        Professional Pressure Washing in Austin, TX.
-      </h1>
-
-      <p className="mt-6 max-w-2xl text-lg leading-8 text-zinc-200 md:text-xl">
-        Restore your home&apos;s exterior with dependable pressure washing
-        services from a family-owned local business with 20+ years of
-        experience. Serving Austin and surrounding communities.
-      </p>
-
-      <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-semibold text-zinc-200">
-        <span className="flex items-center gap-2">
-          <span className="text-blue-400">✓</span>
-          20+ Years Experience
-        </span>
-
-        <span className="flex items-center gap-2">
-          <span className="text-blue-400">✓</span>
-          Family Owned
-        </span>
-
-        <span className="flex items-center gap-2">
-          <span className="text-blue-400">✓</span>
-          Free Quotes
-        </span>
-      </div>
-
-      <div className="mt-9">
-        <a
-          href="#quote"
-          className="inline-flex items-center rounded-full bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl"
-        >
-Request a Free Quote        </a>
-
-        <p className="mt-3 text-sm text-zinc-300">
-          Free estimates • No obligation
-        </p>
-      </div>
-    </div>
-  </div>
-</section>
+          </div>
+        </div>
+      </section>
 
       {/* Services */}
       <section className="bg-white px-6 py-20 md:py-28">
@@ -196,35 +87,35 @@ Request a Free Quote        </a>
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-zinc-600">
-              We help homeowners restore the appearance of their property with
-              reliable pressure washing services.
+              We help homeowners restore the appearance of their property
+              with reliable pressure washing services.
             </p>
           </div>
 
           <div className="mt-12 grid gap-6 md:grid-cols-3">
-          <ServiceCard
-  image="/driveway-cleaning.jpg"
-  alt="Professional driveway pressure washing"
-  number="01"
-  title="Driveway Cleaning"
-  description="Remove dirt, grime, stains, and buildup to give your driveway a cleaner, brighter appearance."
-/>
+            <ServiceCard
+              image="/driveway-cleaning.jpg"
+              alt="Professional driveway pressure washing"
+              number="01"
+              title="Driveway Cleaning"
+              description="Remove dirt, grime, stains, and buildup to give your driveway a cleaner, brighter appearance."
+            />
 
-<ServiceCard
-  image="/house-washing.jpg"
-  alt="Professional pressure washing of a house exterior"
-  number="02"
-  title="House Washing"
-  description="Freshen up your home's exterior by removing dirt, algae, and other buildup from exterior surfaces."
-/>
+            <ServiceCard
+              image="/house-washing.jpg"
+              alt="Professional pressure washing of a house exterior"
+              number="02"
+              title="House Washing"
+              description="Freshen up your home's exterior by removing dirt, algae, and other buildup from exterior surfaces."
+            />
 
-<ServiceCard
-  image="/deck-patio-cleaning.jpg"
-  alt="Professional pressure washing of a wooden deck and patio"
-  number="03"
-  title="Deck & Patio Cleaning"
-  description="Restore outdoor living spaces by removing grime and buildup from decks, patios, and other hard surfaces."
-/>
+            <ServiceCard
+              image="/deck-patio-cleaning.jpg"
+              alt="Professional pressure washing of a wooden deck and patio"
+              number="03"
+              title="Deck & Patio Cleaning"
+              description="Restore outdoor living spaces by removing grime and buildup from decks, patios, and other hard surfaces."
+            />
           </div>
 
           <a
@@ -321,7 +212,7 @@ Request a Free Quote        </a>
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-zinc-600">
-              Sample testimonials for this practice project.
+              See what customers have to say about their experience.
             </p>
           </div>
 
@@ -371,7 +262,7 @@ Request a Free Quote        </a>
         </div>
       </section>
 
-      {/* Before / After */}
+      {/* Results */}
       <section className="bg-zinc-100 px-6 py-20 md:py-28">
         <div className="mx-auto max-w-7xl">
           <div className="max-w-2xl">
@@ -387,8 +278,8 @@ Request a Free Quote        </a>
             </h2>
 
             <p className="mt-5 text-lg leading-8 text-zinc-600">
-              Before-and-after images will be added later. These blocks are
-              placeholders for the practice project.
+              Before-and-after project photos can be added here as the
+              portfolio grows.
             </p>
           </div>
 
@@ -397,7 +288,7 @@ Request a Free Quote        </a>
               <div className="text-center">
                 <p className="font-black text-zinc-700">Before Photo</p>
                 <p className="mt-2 text-sm text-zinc-500">
-                  Placeholder for a real project image
+                  Add a real project image here
                 </p>
               </div>
             </div>
@@ -406,7 +297,7 @@ Request a Free Quote        </a>
               <div className="text-center">
                 <p className="font-black text-blue-700">After Photo</p>
                 <p className="mt-2 text-sm text-blue-600">
-                  Placeholder for a real project image
+                  Add a real project image here
                 </p>
               </div>
             </div>
@@ -481,7 +372,7 @@ Request a Free Quote        </a>
             href="#quote"
             className="mt-10 inline-flex items-center rounded-full bg-blue-600 px-7 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-blue-700"
           >
-            Get a Free Quote
+            Request a Free Quote
           </a>
         </div>
       </section>
@@ -651,8 +542,8 @@ Request a Free Quote        </a>
                 name="service"
                 autoComplete="off"
                 required
-                className="mt-2 w-full rounded-2xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-white outline-none transition focus:border-blue-500"
                 defaultValue=""
+                className="mt-2 w-full rounded-2xl border border-zinc-700 bg-zinc-950 px-4 py-3 text-white outline-none transition focus:border-blue-500"
               >
                 <option value="" disabled>
                   Select a service
@@ -701,18 +592,91 @@ Request a Free Quote        </a>
       </section>
 
       {/* Footer */}
-      <footer className="bg-black px-6 py-10 text-white">
-        <div className="mx-auto flex max-w-7xl flex-col gap-4 md:flex-row md:items-center md:justify-between">
-          <div>
-            <p className="font-black">Michael&apos;s Pressure Washing</p>
-            <p className="mt-1 text-sm text-zinc-500">
-              Serving Austin and surrounding communities.
-            </p>
+      <footer className="bg-black px-6 py-12 text-white">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid gap-10 md:grid-cols-3">
+            <div>
+              <p className="text-xl font-black">
+                Michael&apos;s Pressure Washing
+              </p>
+
+              <p className="mt-3 max-w-sm text-sm leading-6 text-zinc-400">
+                Professional pressure washing services for homeowners in
+                Austin and surrounding communities.
+              </p>
+
+              <a
+                href="tel:9292999611"
+                className="mt-5 inline-block font-bold text-blue-400 transition hover:text-blue-300"
+              >
+                929-299-9611
+              </a>
+            </div>
+
+            <div>
+              <p className="font-bold">Quick Links</p>
+
+              <nav className="mt-4 flex flex-col gap-3 text-sm text-zinc-400">
+                <a
+                  href="/"
+                  className="transition hover:text-white"
+                >
+                  Home
+                </a>
+
+                <a
+                  href="/services"
+                  className="transition hover:text-white"
+                >
+                  Services
+                </a>
+
+                <a
+                  href="/about"
+                  className="transition hover:text-white"
+                >
+                  About
+                </a>
+
+                <a
+                  href="/contact"
+                  className="transition hover:text-white"
+                >
+                  Contact
+                </a>
+              </nav>
+            </div>
+
+            <div>
+              <p className="font-bold">Service Areas</p>
+
+              <div className="mt-4 flex flex-wrap gap-2">
+                {["Austin", "Round Rock", "Cedar Park", "Pflugerville"].map(
+                  (city) => (
+                    <span
+                      key={city}
+                      className="rounded-full border border-zinc-800 px-3 py-2 text-sm text-zinc-400"
+                    >
+                      {city}
+                    </span>
+                  ),
+                )}
+              </div>
+
+              <a
+                href="#quote"
+                className="mt-6 inline-flex rounded-full bg-blue-600 px-5 py-3 text-sm font-bold text-white transition hover:bg-blue-700"
+              >
+                Request a Free Quote
+              </a>
+            </div>
           </div>
 
-          <p className="text-sm text-zinc-500">
-            © 2026 Michael&apos;s Pressure Washing. All rights reserved.
-          </p>
+          <div className="mt-10 border-t border-zinc-800 pt-6 text-sm text-zinc-500">
+            <p>
+              © 2026 Michael&apos;s Pressure Washing. All rights reserved.
+            </p>
+          </div>
         </div>
       </footer>
     </main>
