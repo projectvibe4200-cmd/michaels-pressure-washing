@@ -112,7 +112,7 @@ export default function Home() {
                 onClick={() => setMenuOpen(false)}
                 className="mt-2 flex items-center justify-center rounded-xl bg-blue-600 px-4 py-4 font-bold text-white shadow-sm transition hover:bg-blue-700"
               >
-                Get a Free Quote
+                Request a Free Quote
               </a>
             </div>
           </nav>
@@ -170,8 +170,7 @@ export default function Home() {
           href="#quote"
           className="inline-flex items-center rounded-full bg-blue-600 px-8 py-4 text-base font-bold text-white shadow-lg transition hover:-translate-y-0.5 hover:bg-blue-700 hover:shadow-xl"
         >
-          Get a Free Quote
-        </a>
+Request a Free Quote        </a>
 
         <p className="mt-3 text-sm text-zinc-300">
           Free estimates • No obligation
@@ -232,7 +231,7 @@ export default function Home() {
             href="#quote"
             className="mt-10 inline-flex items-center rounded-full bg-blue-600 px-7 py-4 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-blue-700"
           >
-            Get a Free Quote
+            Request a Free Quote
           </a>
         </div>
       </section>
@@ -285,7 +284,7 @@ export default function Home() {
               href="#quote"
               className="mt-8 inline-flex items-center rounded-full bg-blue-600 px-6 py-3 font-semibold text-white transition hover:-translate-y-0.5 hover:bg-blue-700"
             >
-              Get a Free Quote
+              Request a Free Quote
             </a>
           </div>
 
